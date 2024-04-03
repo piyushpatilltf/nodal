@@ -12,8 +12,21 @@ code {
     monospace;
 }
 
-
-
+span[data-dpFor="first_party_name"]:empty {
+  border-bottom: 1px solid black;
+  width: 50px; 
+  display: inline-block; 
+}
+span[data-dpFor="first_party_state_of_organization"]:empty {
+  border-bottom: 1px solid black;
+  width: 50px; 
+  display: inline-block; 
+}
+span[data-dpFor="first_party_type"]:empty {
+  border-bottom: 1px solid black; 
+  width: 50px;
+  display: inline-block; 
+}
 
 span[data-dpId="#np_0001"] {
   position: relative; /* Ensure the tooltip is positioned relative to the span */
