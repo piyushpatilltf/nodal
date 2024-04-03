@@ -1,0 +1,33 @@
+span[data-dpFor="first_party_name"]:empty {
+    border-bottom: 1px solid black;
+    width: 50px; 
+    display: inline-block; 
+  }
+  span[data-dpFor="first_party_state_of_organization"]:empty {
+    border-bottom: 1px solid black;
+    width: 50px; 
+    display: inline-block; 
+  }
+  span[data-dpFor="first_party_type"]:empty {
+    border-bottom: 1px solid black; 
+    width: 50px;
+    display: inline-block; 
+  }
+
+  .mainContainer{
+    display: flex;
+    flex-direction: row;
+  }
+  .inputContainer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 30vh;  
+    align-items: center;
+  }
+  .outputContainer{
+    flex: 1;
+  }
+  .inputField{
+    width: 80%;
+  }
