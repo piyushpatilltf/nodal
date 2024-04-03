@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+span[data-dpId="#np_0001"] {
+  position: relative; /* Ensure the tooltip is positioned relative to the span */
+}
+
+span[data-dpId="#np_0001"]:hover::after {
+  content: "would"; /* Set the content of the tooltip to the value of the data-dpId attribute */
+  position: absolute; /* Position the tooltip absolutely */
+  top: 100%; /* Position the tooltip below the span */
+  left: 0; /* Align the tooltip with the left edge of the span */
+  background-color: rgba(0, 0, 0, 0.7); /* Background color of the tooltip */
+  color: white; /* Text color of the tooltip */
+  padding: 5px; /* Padding around the tooltip text */
+  border-radius: 5px; /* Border radius for rounded corners */
+  z-index: 1; /* Ensure the tooltip appears above other elements */
+}
