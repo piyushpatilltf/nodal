@@ -14,9 +14,9 @@ function AssignmentTwo() {
             setLoading(false)
         },2000)
     }
-    const handleChangeNameInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyName(e.currentTarget.value);
-    const handleChangeStateInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyState(e.currentTarget.value);
-    const handleChangeTypeInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyType(e.currentTarget.value);
+    const handleChangeNameInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyName(e.currentTarget.value.trim());
+    const handleChangeStateInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyState(e.currentTarget.value.trim());
+    const handleChangeTypeInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyType(e.currentTarget.value.trim());
     useEffect(()=>{
         apiFunction()
     },[]);
