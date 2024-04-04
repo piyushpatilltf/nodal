@@ -1,3 +1,5 @@
+Assignment 3
+
 user_table:
     user_id [primary Key]
     username
@@ -10,6 +12,7 @@ user_table:
 
 negotiation_table:
     negotiation_id [primary Key]
+    user_id [foregin Key]
     title
     start_time
     end_time
