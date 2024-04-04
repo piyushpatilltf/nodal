@@ -1,0 +1,51 @@
+user_table:
+    user_id [primary Key]
+    username
+    user_email
+    user_phone
+    user_password
+    user_created_at
+    user_updated_at
+    user_mobile_verification
+
+negotiation_table:
+    negotiation_id [primary Key]
+    title
+    start_time
+    end_time
+    negotiation_count
+    created_at
+    updated_at
+    created_by
+    updated_by
+
+negotiation_round_table:
+    negotiation_round_id [primary Key]
+    negotiation_id [foregin Key]
+    round_number
+    start_time
+    end_time
+    created_at
+    updated_at
+    created_by
+    updated_by
+
+decision_point_table:
+    decision_point_id [primary Key]
+    negotiation_round_id [foregin Key]
+    dp_point
+    title
+    created_at
+    updated_at
+    created_by
+    updated_by
+
+master_table:
+    user_id
+    decision_point_id
+    created_by
+    updated_by
+    created_at
+    updated_at
+
+

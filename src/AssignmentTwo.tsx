@@ -1,19 +1,22 @@
-import { useEffect, useState } from "react";
+import { ReactHTML, useEffect, useState } from "react";
 import TextField from '@mui/material/TextField';
 import './AssignmentTwo.css'
-const renderData='This Confidentiality Agreement (“<b>Agreement</b>”), by and between <span data-dpFor="first_party_name"></span>, <span data-dpFor="first_party_state_of_organization"></span> <span  data-dpFor="first_party_type"></span> (“<b>Discloser</b>”).'
+const renderData:string='This Confidentiality Agreement (“<b>Agreement</b>”), by and between <span data-dpFor="first_party_name"></span>, <span data-dpFor="first_party_state_of_organization"></span> <span  data-dpFor="first_party_type"></span> (“<b>Discloser</b>”).'
 function AssignmentTwo() {
-    const [loading, setLoading] = useState(true);
-    const [displayText, setDisplayText] = useState('');
-    const [partyName,setPartyName]=useState('');
-    const [partyState,setPartyState]=useState('');
-    const [partType,setPartyType]=useState('');
-    const apiFunction=()=>{
+    const [loading, setLoading] = useState<boolean>(true);
+    const [displayText, setDisplayText] = useState<string>('');
+    const [partyName,setPartyName]=useState<string>('');
+    const [partyState,setPartyState]=useState<string>('');
+    const [partType,setPartyType]=useState<string>('');
+    const apiFunction=():void=>{
         setTimeout(()=>{
-            setLoading(false)
             setDisplayText(renderData)
-        },3000)
+            setLoading(false)
+        },2000)
     }
+    const handleChangeNameInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyName(e.currentTarget.value);
+    const handleChangeStateInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyState(e.currentTarget.value);
+    const handleChangeTypeInput=(e:React.ChangeEvent<HTMLInputElement>)=>setPartyType(e.currentTarget.value);
     useEffect(()=>{
         apiFunction()
     },[]);
@@ -34,14 +37,18 @@ function AssignmentTwo() {
     return (
         <div>
             <h1>Assignment Two</h1>
-            <div className="mainContainer">
-                <div className="outputContainer" dangerouslySetInnerHTML={{ __html: renderData }}></div>
-                <div className="inputContainer">
-                    <TextField className="inputField" label="First Party Name" variant="outlined" onChange={(e)=>setPartyName(e.currentTarget.value)}/>
-                    <TextField className="inputField" label="First Party State of organization" onChange={(e)=>setPartyState(e.currentTarget.value)} variant="outlined" />
-                    <TextField className="inputField" label="First Party Type" variant="outlined" onChange={(e)=>setPartyType(e.currentTarget.value)} />
+            {
+                loading?
+                <h1>Loading</h1>:
+                <div className="mainContainer">
+                    <div className="outputContainer" dangerouslySetInnerHTML={{ __html: displayText }}></div>
+                    <div className="inputContainer">
+                        <TextField className="customTextField" label="First Party Name" variant="outlined" onChange={handleChangeNameInput}/>
+                        <TextField className="customTextField" label="First Party State of organization" onChange={handleChangeStateInput} variant="outlined" />
+                        <TextField className="customTextField" label="First Party Type" variant="outlined" onChange={handleChangeTypeInput} />
+                    </div>
                 </div>
-            </div>
+            }
         </div>
         
     )
