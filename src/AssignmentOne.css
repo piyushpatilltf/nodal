@@ -3,7 +3,7 @@ span[data-dpId] {
   }
   
 span[data-dpId]:hover::after {
-    content: "would";
+    content: attr(data-dpId);
     position: absolute; 
     top: 100%;
     left: 0; 
