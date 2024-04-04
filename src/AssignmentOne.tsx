@@ -21,7 +21,10 @@ function AssignmentOne() {
         if (temp) {
             setDisplayText(temp);
         }
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false); 
+        }, 2000);
+        
     }, []);
 
     return (

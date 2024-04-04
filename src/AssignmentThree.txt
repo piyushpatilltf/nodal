@@ -33,6 +33,7 @@ negotiation_round_table:
 decision_point_table:
     decision_point_id [primary Key]
     negotiation_round_id [foregin Key]
+    user_id [foregin Key]
     dp_point
     title
     created_at
@@ -40,12 +41,6 @@ decision_point_table:
     created_by
     updated_by
 
-master_table:
-    user_id
-    decision_point_id
-    created_by
-    updated_by
-    created_at
-    updated_at
+
 
 

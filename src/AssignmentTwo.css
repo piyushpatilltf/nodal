@@ -3,22 +3,22 @@ span[data-dpFor="first_party_name"]:empty {
     width: 50px; 
     display: inline-block; 
   }
-  span[data-dpFor="first_party_state_of_organization"]:empty {
+span[data-dpFor="first_party_state_of_organization"]:empty {
     border-bottom: 1px solid black;
     width: 50px; 
     display: inline-block; 
   }
-  span[data-dpFor="first_party_type"]:empty {
+span[data-dpFor="first_party_type"]:empty {
     border-bottom: 1px solid black; 
     width: 50px;
     display: inline-block; 
   }
 
-  .mainContainer{
+.mainContainer{
     display: flex;
     flex-direction: row;
   }
-  .inputContainer{
+.inputContainer{
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -27,12 +27,12 @@ span[data-dpFor="first_party_name"]:empty {
     min-height: 210px;
     justify-content: space-between;
   }
-  .outputContainer{
+.outputContainer{
     margin-top: 10px;
     flex: 1;
     margin-bottom: 20px;
   }
-  .customTextField{
+.customTextField{
     width: 80%;
   }
 
