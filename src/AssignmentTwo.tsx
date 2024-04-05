@@ -1,6 +1,7 @@
 import { ReactHTML, useEffect, useState } from "react";
 import TextField from '@mui/material/TextField';
 import './AssignmentTwo.css'
+import parse from 'html-react-parser';
 const renderData:string='This Confidentiality Agreement (“<b>Agreement</b>”), by and between <span data-dpFor="first_party_name"></span>, <span data-dpFor="first_party_state_of_organization"></span> <span  data-dpFor="first_party_type"></span> (“<b>Discloser</b>”).'
 function AssignmentTwo() {
     const [loading, setLoading] = useState<boolean>(true);
@@ -41,7 +42,7 @@ function AssignmentTwo() {
                 loading?
                 <h1>Loading</h1>:
                 <div className="mainContainer">
-                    <div className="outputContainer" dangerouslySetInnerHTML={{ __html: displayText }}></div>
+                    <div>{parse(displayText)}</div>
                     <div className="inputContainer">
                         <TextField className="customTextField" label="First Party Name" variant="outlined" onChange={handleChangeNameInput}/>
                         <TextField className="customTextField" label="First Party State of organization" onChange={handleChangeStateInput} variant="outlined" />
