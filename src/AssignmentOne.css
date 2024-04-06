@@ -3,7 +3,7 @@ span[data-dpId] {
   }
   
 span[data-dpId]:hover::after {
-    content: attr(tootTipText);
+    content: attr(toottiptext);
     position: absolute; 
     top: 100%;
     left: 0; 
